@@ -98,11 +98,11 @@ export async function handleGenerate(request: Request, env: Env, path: string): 
     return Response.json({ error: 'Method not allowed' }, { status: 405 });
   }
 
-  // Protected by default - require auth
-  const authed = await isAuthenticated(request, env);
-  if (!authed) {
-    return Response.json({ error: 'غير مصرح' }, { status: 401 });
-  }
+  // TEMP: Auth disabled for testing
+  // const authed = await isAuthenticated(request, env);
+  // if (!authed) {
+  //   return Response.json({ error: 'غير مصرح' }, { status: 401 });
+  // }
 
   if (path === '/api/generate-ideas') {
     const body = await request.json<{ input?: string; ideaType?: string }>();

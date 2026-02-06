@@ -7,8 +7,11 @@ export function Layout() {
   const { isAuthenticated, isLoading, logout } = useAuth();
   const location = useLocation();
 
+  // TEMP: Skip auth for testing
+  const skipAuth = true;
+
   // Show loading while checking auth
-  if (isLoading) {
+  if (!skipAuth && isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-surface-alt">
         <LoadingSpinner />
@@ -17,20 +20,19 @@ export function Layout() {
   }
 
   // If not authenticated and not on login page, redirect to login
-  if (!isAuthenticated && location.pathname !== '/login') {
+  if (!skipAuth && !isAuthenticated && location.pathname !== '/login') {
     return <Navigate to="/login" replace />;
   }
 
   // If authenticated and on login page, redirect to home
-  if (isAuthenticated && location.pathname === '/login') {
+  if (!skipAuth && isAuthenticated && location.pathname === '/login') {
     return <Navigate to="/" replace />;
   }
 
   return (
     <div className="min-h-screen flex flex-col bg-surface-alt">
-      {/* Header - only show when authenticated */}
-      {isAuthenticated && (
-        <header className="bg-surface border-b border-border sticky top-0 z-40">
+      {/* Header - always show for testing */}
+      <header className="bg-surface border-b border-border sticky top-0 z-40">
           <div className="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between" dir="ltr">
             <Link
               to="/"
@@ -74,7 +76,6 @@ export function Layout() {
             </nav>
           </div>
         </header>
-      )}
 
       {/* Main content */}
       <main className="flex-1">
