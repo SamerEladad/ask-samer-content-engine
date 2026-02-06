@@ -63,11 +63,11 @@ function setSessionCookie(token: string, isSecure: boolean): string {
   const parts = [
     `session=${token}`,
     'HttpOnly',
+    'Secure', // Required for SameSite=None
     'Path=/',
-    'SameSite=Lax',
+    'SameSite=None',
     'Max-Age=604800', // 7 days
   ];
-  if (isSecure) parts.push('Secure');
   return parts.join('; ');
 }
 
@@ -75,11 +75,11 @@ function clearSessionCookie(isSecure: boolean): string {
   const parts = [
     'session=deleted',
     'HttpOnly',
+    'Secure', // Required for SameSite=None
     'Path=/',
-    'SameSite=Lax',
+    'SameSite=None',
     'Max-Age=0',
   ];
-  if (isSecure) parts.push('Secure');
   return parts.join('; ');
 }
 
