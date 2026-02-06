@@ -26,6 +26,19 @@ body {
   direction: rtl;
   margin: 0;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Prevent horizontal overflow on mobile */
+*, *::before, *::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Mobile touch improvements */
+button, a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Scrollbar */

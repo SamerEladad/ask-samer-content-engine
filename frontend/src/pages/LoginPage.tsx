@@ -29,7 +29,7 @@ export function LoginPage() {
 
   return (
     <div className="flex items-center justify-center min-h-[80vh]">
-      <div className="bg-surface rounded-2xl p-8 shadow-sm border border-border w-full max-w-sm space-y-6">
+      <div className="bg-surface rounded-2xl p-6 sm:p-8 shadow-sm border border-border w-full max-w-sm space-y-6">
         <div className="text-center space-y-2">
           <div className="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center mx-auto">
             <Lock className="w-6 h-6 text-primary" />

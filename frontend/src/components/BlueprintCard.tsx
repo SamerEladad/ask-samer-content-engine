@@ -114,7 +114,7 @@ export function BlueprintCard({ title, script, showSave = true, savedId, onUpdat
   return (
     <div className="bg-surface rounded-2xl shadow-sm border border-border overflow-hidden">
       {/* Actions bar */}
-      <div className="flex items-center gap-2 px-5 py-3 border-b border-border bg-surface-elevated">
+      <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-3 border-b border-border bg-surface-elevated flex-wrap">
         {editing ? (
           <input
             value={editTitle}
@@ -169,9 +169,9 @@ export function BlueprintCard({ title, script, showSave = true, savedId, onUpdat
         )}
       </div>
 
-      <div className="p-5 space-y-5">
+      <div className="p-3 sm:p-5 space-y-4 sm:space-y-5">
         {/* Hook */}
-        <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
+        <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-3 sm:p-4">
           <div className="text-xs font-bold text-amber-400 mb-1.5 uppercase tracking-wider">
             🎣 HOOK
           </div>
@@ -209,7 +209,7 @@ export function BlueprintCard({ title, script, showSave = true, savedId, onUpdat
         </div>
 
         {/* CTA */}
-        <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
+        <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-3 sm:p-4">
           <div className="text-xs font-bold text-amber-400 mb-1.5 uppercase tracking-wider">
             📢 CTA
           </div>
@@ -227,7 +227,7 @@ export function BlueprintCard({ title, script, showSave = true, savedId, onUpdat
         </div>
 
         {/* Filming & Editing — always LTR / English */}
-        <div className="bg-surface-elevated rounded-xl p-4 space-y-4" dir="ltr">
+        <div className="bg-surface-elevated rounded-xl p-3 sm:p-4 space-y-3 sm:space-y-4" dir="ltr">
           <div className="text-xs font-bold text-text-secondary uppercase tracking-wider">
             🎬 Filming &amp; Editing Instructions
           </div>

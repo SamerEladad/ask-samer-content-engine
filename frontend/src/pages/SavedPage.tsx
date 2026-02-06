@@ -212,9 +212,9 @@ export function SavedPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 sm:gap-3">
         <Archive className="w-5 h-5 text-primary" />
-        <h1 className="text-xl font-bold">السكريبتات المحفوظة</h1>
+        <h1 className="text-lg sm:text-xl font-bold">السكريبتات المحفوظة</h1>
         <span className="text-xs bg-primary-light text-primary px-2 py-0.5 rounded-full font-medium">
           {scripts.length}
         </span>
@@ -323,7 +323,7 @@ function SavedScriptCard({
       }`}
     >
       {/* Collapsed header */}
-      <div className="flex items-center gap-2 p-4">
+      <div className="flex items-center gap-1.5 sm:gap-2 p-3 sm:p-4">
         {/* Drag handle */}
         <div
           className="cursor-grab touch-none select-none"
@@ -413,7 +413,7 @@ function ExpandedContent({ id }: { id: string }) {
 
   if (isLoading) {
     return (
-      <div className="px-4 pb-4">
+      <div className="px-3 sm:px-4 pb-3 sm:pb-4">
         <LoadingSpinner text="بنحمّل السكريبت..." />
       </div>
     );
@@ -421,7 +421,7 @@ function ExpandedContent({ id }: { id: string }) {
 
   if (!data?.script) {
     return (
-      <div className="px-4 pb-4">
+      <div className="px-3 sm:px-4 pb-3 sm:pb-4">
         <p className="text-sm text-error text-center">فشل التحميل</p>
       </div>
     );

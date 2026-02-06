@@ -110,15 +110,15 @@ export function HomePage() {
           <Sparkles className="w-4 h-4" />
           محرك المحتوى
         </div>
-        <h1 className="text-2xl font-bold">حوّل أفكارك لمحتوى جاهز للتصوير</h1>
-        <p className="text-text-secondary text-sm max-w-lg mx-auto">
+        <h1 className="text-xl sm:text-2xl font-bold">حوّل أفكارك لمحتوى جاهز للتصوير</h1>
+        <p className="text-text-secondary text-xs sm:text-sm max-w-lg mx-auto">
           اكتب فكرتك الخام وهنحوّلها لـ 4 أفكار محتوى مختلفة مع سكريبتات كاملة
           جاهزة للتصوير
         </p>
       </div>
 
       {/* Input section */}
-      <div className="bg-surface rounded-2xl p-6 shadow-sm border border-border space-y-4">
+      <div className="bg-surface rounded-2xl p-4 sm:p-6 shadow-sm border border-border space-y-4">
         <label className="block text-sm font-semibold text-text">
           اكتب أفكارك الخام
         </label>
@@ -136,7 +136,7 @@ export function HomePage() {
           <span className="text-xs text-text-secondary font-medium">
             نوع الفكرة (اختياري)
           </span>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2">
             {IDEA_TYPES.map(({ label, icon: Icon }) => (
               <button
                 key={label}
@@ -182,8 +182,8 @@ export function HomePage() {
       {/* Ideas grid */}
       {ideas && !ideasMutation.isPending && (
         <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-bold">الأفكار المقترحة</h2>
+          <div className="flex items-center justify-between gap-2">
+            <h2 className="text-base sm:text-lg font-bold">الأفكار المقترحة</h2>
             <Button
               variant="secondary"
               size="sm"
@@ -269,7 +269,7 @@ function IdeaCard({
   };
 
   return (
-    <div className="bg-surface rounded-2xl p-5 shadow-sm border border-border hover:border-primary/20 transition-all space-y-3">
+    <div className="bg-surface rounded-2xl p-4 sm:p-5 shadow-sm border border-border hover:border-primary/20 transition-all space-y-3">
       <h3 className="font-bold text-sm">{idea.title}</h3>
       <p className="text-sm text-text-secondary leading-relaxed">
         {idea.explanation}
