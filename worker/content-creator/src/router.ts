@@ -3,9 +3,20 @@ import { handleAuth } from './auth';
 import { handleGenerate } from './generate';
 import { handleScripts } from './scripts';
 
+const ALLOWED_ORIGINS = [
+  'https://admin.asksamer.de',
+  'https://ask-samer-content-engine.pages.dev',
+  'http://localhost:5173',
+];
+
 function corsHeaders(origin: string | null): Record<string, string> {
+  const allowedOrigin =
+    origin && ALLOWED_ORIGINS.some((o) => origin === o || origin.endsWith('.pages.dev'))
+      ? origin
+      : ALLOWED_ORIGINS[0];
+
   return {
-    'Access-Control-Allow-Origin': origin || '*',
+    'Access-Control-Allow-Origin': allowedOrigin,
     'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Allow-Credentials': 'true',
