@@ -1,3 +1,4 @@
+// API base URL - empty for same-origin (uses Pages Function proxy)
 const BASE = import.meta.env.VITE_API_BASE_URL || '';
 
 async function request<T>(
